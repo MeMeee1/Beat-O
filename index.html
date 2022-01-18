@@ -1,62 +1,113 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    
-    <link rel="stylesheet" href="index.css" />
+<title>Ysabel Katchy JavaScript Game</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
 
-	<title>BEAT-O</title>
-</head>
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("tic.png");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
 <body>
-  <div class="container">
-    
 
-    <h1>BEAT-O</h1>
-    <br>
-    <div class="left-side">
-        <div id="score"></div>
-        <div id="comscore"></div>
-        
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <center>
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3" cen>
+        <a href="#" class="w3-button w3-block w3-black"><strong>HOME</strong></a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#about" class="w3-button w3-block w3-black"><strong>ABOUT</strong></a>
+      </div>
+      
     </div>
-    <br>
-    <div class="play-area">
-      <div id="block_0" class="block"></div>
-      <div id="block_1" class="block"></div>
-      <div id="block_2" class="block"></div>
-      <div id="block_3" class="block"></div>
-      <div id="block_4" class="block"></div>
-      <div id="block_5" class="block"></div>
-      <div id="block_6" class="block"></div>
-      <div id="block_7" class="block"></div>
-      <div id="block_8" class="block"></div>
-    </div>
-    <br>
-
-    <h2 id="winner"></h2>
-    
-    <br>
-    <button onclick="reset_board()"><strong>PLAY AGAIN</strong></button>
-    <br>
-    <!--<button onclick="quit()"><a href="home.html"><strong>HOME</strong></a></button>-->
-    
-  
-
-  
-  
-  
-  
-
-  
-  <!-- <div id='content'>
-    <canvas id='canvas' width='160' height='90'></canvas>
-    <input id='add' type='button' value='add score' />
-  </div> -->
+  </center>
 </div>
-<!--<marquee  BGCOLOR=Pink><strong>Slide-in text</strong></marquee>-->
-  <script src="index.js"></script>
- 
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:150px"><strong>BEAT O</strong></span>
+  </div>
+  
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container --><br><br>
+<div class="w3-container" id="about">
+  <div class="w3-content " style="max-width:800px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide w3-blue"><strong>ABOUT BEAT O</strong></span></h5>
+    <p>Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner</p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"Creativity is intelligence having fun"</i></p>
+      <p>Inventor: Albert Einstein</p>
+    </div>
+    <img src="download.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+    
+  </div>
+</div>
+
+
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:800px">
+    <br>
+    <p><button class="w3-button w3-pink" type="submit"><a href="index.html"><strong>PLAY</strong></button></a></p>
+    </form>
+  </div>
+  <div class="w3-content" style="max-width:800px">
+    
+    <button class="w3-button w3-blue" type="submit" onclick="quit()" style="float: left;"><strong>QUIT</strong></button>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Built by:<a href="https://drive.google.com/file/d/13o0_wBdR1-RjQdPq4RvVUUoo75YQB0Jh/view?usp=sharing" class="w3-hover-text-green">Ysabel Katchy</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+function quit(){
+  window.close();
+}
+
+document.getElementById("myLink").click();
+</script>
 
 </body>
 </html>
